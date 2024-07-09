@@ -76,28 +76,21 @@ footer {
     margin-bottom: 1rem;
 }
 
-.photo-grid {
+.photo-gallery {
     margin-top: 2rem;
-    width: 100%;
 }
 
-.grid {
+.photo-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 1rem;
-    width: 100%;
 }
 
-.grid img {
+.photo-grid img {
     width: 100%;
-    height: 150px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 4px;
-    transition: transform 0.3s ease;
-}
-
-.grid img:hover {
-    transform: scale(1.05);
+    aspect-ratio: 1 / 1;
 }
 
 @media (max-width: 768px) {

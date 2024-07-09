@@ -46,11 +46,9 @@
                 <p>[Add another paragraph expanding on your thoughts]</p>
             </section>
             <hr>
-            <section class="photo-grid">
+            <section class="photo-gallery">
                 <h2>Photo Gallery</h2>
-                <div class="grid" id="photoGrid">
-                    <!-- Photos will be dynamically added here -->
-                </div>
+                <div id="photoGrid" class="photo-grid"></div>
             </section>
             <footer>
                 <p>If you also enjoy [your interest], send me an email to <a href="mailto:pablocoboperez07@gmail.com">pablocoboperez07@gmail.com</a>.</p>
@@ -71,8 +69,6 @@
                     const htmlDoc = parser.parseFromString(data, 'text/html');
                     const links = htmlDoc.getElementsByTagName('a');
 
-                    photoGrid.innerHTML = ''; // Clear existing images
-
                     for (let link of links) {
                         const fileName = link.href.split('/').pop();
                         const fileExtension = fileName.split('.').pop().toLowerCase();
@@ -88,14 +84,7 @@
                 .catch(error => console.error('Error loading photos:', error));
         }
 
-        loadPhotos(); // Initial load
-
-        // Adjust grid on window resize
-        window.addEventListener('resize', () => {
-            const containerWidth = document.querySelector('.content').offsetWidth;
-            const columns = Math.floor(containerWidth / 150);
-            photoGrid.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
-        });
+        loadPhotos();
     </script>
 </body>
 </html>
