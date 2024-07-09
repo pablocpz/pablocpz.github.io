@@ -8,11 +8,24 @@ body {
 }
 
 .container {
-    width: 80%;
-    max-width: 800px;
-    margin: 2rem auto;
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 2rem;
+}
+
+.sidebar {
+    width: 300px;
+    padding: 1rem;
     background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 2rem;
+}
+
+.content {
+    flex: 1;
+    background-color: #fff;
+    padding: 2rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -52,4 +65,42 @@ a:hover {
 footer {
     margin-top: 2rem;
     font-size: 0.9rem;
+}
+
+.twitter-posts {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.twitter-tweet {
+    margin-bottom: 1rem;
+}
+
+.photo-grid {
+    margin-top: 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
 }
