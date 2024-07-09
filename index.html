@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <aside class="sidebar">
-            <h2>Latest Tweets</h2>
+            <h2>Featured Tweets</h2>
             <div class="twitter-posts">
                 <blockquote class="twitter-tweet"><a href="https://twitter.com/pablocpz_ai/status/1808256804561822043"></a></blockquote>
                 <blockquote class="twitter-tweet"><a href="https://twitter.com/pablocpz_ai/status/1757887396115353672"></a></blockquote>
@@ -22,12 +22,12 @@
             </div>
         </aside>
         <main class="content">
-            <h1>Your Name</h1>
+            <h1>Pablo Cobo Pérez</h1>
             <section class="about">
                 <h2>About me:</h2>
                 <ul>
-                    <li>I live in [Your City], [Your Country].</li>
-                    <li>Before that, I lived in...
+                    <li>I live in Córdoba, Spain</li>
+                    <li>I enjoy...
                         <ul>
                             <li>[City 1];</li>
                             <li>[City 2];</li>
@@ -35,7 +35,7 @@
                             <li>and [City 4].</li>
                         </ul>
                     </li>
-                    <li>I enjoy [list your interests and hobbies].</li>
+                    <li>I'm currently looking for...</li>
                     <li>I work at [Company Name]. [Brief description of your job].</li>
                     <li>I wonder about [something you're curious about].</li>
                 </ul>
@@ -48,16 +48,41 @@
             <hr>
             <section class="photo-grid">
                 <h2>Photo Gallery</h2>
-                <div class="grid">
-                    <img src="photos/IMG-20240515-WA0010.jpg" alt="Photo 1">
-                    <!-- Add more images here -->
+                <div class="grid" id="photoGrid">
+                    <!-- Photos will be dynamically added here -->
                 </div>
             </section>
             <footer>
-                <p>If you also enjoy [your interest], send me an email to <a href="mailto:your.email@example.com">your.email@example.com</a>.</p>
-                <p>You can find me on <a href="https://twitter.com/yourusername">Twitter</a>.</p>
+                <p>If you also enjoy [your interest], send me an email to <a href="mailto:pablocoboperez07@gmail.com">pablocoboperez07@gmail.com</a>.</p>
+                <p>You can find me on <a href="https://x.com/pablocpz_ai">Twitter</a>.</p>
             </footer>
         </main>
     </div>
+    <script>
+        const photoGrid = document.getElementById('photoGrid');
+        const photoFolder = 'photos/';
+        const photoExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+
+        fetch(photoFolder)
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const htmlDoc = parser.parseFromString(data, 'text/html');
+                const links = htmlDoc.getElementsByTagName('a');
+
+                for (let link of links) {
+                    const fileName = link.href.split('/').pop();
+                    const fileExtension = fileName.split('.').pop().toLowerCase();
+                    
+                    if (photoExtensions.includes(fileExtension)) {
+                        const img = document.createElement('img');
+                        img.src = photoFolder + fileName;
+                        img.alt = fileName;
+                        photoGrid.appendChild(img);
+                    }
+                }
+            })
+            .catch(error => console.error('Error loading photos:', error));
+    </script>
 </body>
 </html>
