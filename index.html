@@ -63,26 +63,39 @@
         const photoFolder = 'photos/';
         const photoExtensions = ['jpg', 'jpeg', 'png', 'gif'];
 
-        fetch(photoFolder)
-            .then(response => response.text())
-            .then(data => {
-                const parser = new DOMParser();
-                const htmlDoc = parser.parseFromString(data, 'text/html');
-                const links = htmlDoc.getElementsByTagName('a');
+        function loadPhotos() {
+            fetch(photoFolder)
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const htmlDoc = parser.parseFromString(data, 'text/html');
+                    const links = htmlDoc.getElementsByTagName('a');
 
-                for (let link of links) {
-                    const fileName = link.href.split('/').pop();
-                    const fileExtension = fileName.split('.').pop().toLowerCase();
-                    
-                    if (photoExtensions.includes(fileExtension)) {
-                        const img = document.createElement('img');
-                        img.src = photoFolder + fileName;
-                        img.alt = fileName;
-                        photoGrid.appendChild(img);
+                    photoGrid.innerHTML = ''; // Clear existing images
+
+                    for (let link of links) {
+                        const fileName = link.href.split('/').pop();
+                        const fileExtension = fileName.split('.').pop().toLowerCase();
+                        
+                        if (photoExtensions.includes(fileExtension)) {
+                            const img = document.createElement('img');
+                            img.src = photoFolder + fileName;
+                            img.alt = fileName;
+                            photoGrid.appendChild(img);
+                        }
                     }
-                }
-            })
-            .catch(error => console.error('Error loading photos:', error));
+                })
+                .catch(error => console.error('Error loading photos:', error));
+        }
+
+        loadPhotos(); // Initial load
+
+        // Adjust grid on window resize
+        window.addEventListener('resize', () => {
+            const containerWidth = document.querySelector('.content').offsetWidth;
+            const columns = Math.floor(containerWidth / 150);
+            photoGrid.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
+        });
     </script>
 </body>
 </html>
