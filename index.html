@@ -63,11 +63,20 @@
 
         function loadPhotos() {
             fetch(photoFolder)
-                .then(response => response.text())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to load photos directory');
+                    }
+                    return response.text();
+                })
                 .then(data => {
                     const parser = new DOMParser();
                     const htmlDoc = parser.parseFromString(data, 'text/html');
                     const links = htmlDoc.getElementsByTagName('a');
+
+                    if (links.length === 0) {
+                        throw new Error('No photos found');
+                    }
 
                     for (let link of links) {
                         const fileName = link.href.split('/').pop();
@@ -81,7 +90,10 @@
                         }
                     }
                 })
-                .catch(error => console.error('Error loading photos:', error));
+                .catch(error => {
+                    console.error('Error loading photos:', error);
+                    photoGrid.innerHTML = '<p>Unable to load photos. Please make sure the photos directory exists and is accessible.</p>';
+                });
         }
 
         loadPhotos();
