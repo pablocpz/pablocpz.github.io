@@ -138,18 +138,19 @@
                 
                         <div style="display: flex; justify-content: space-between; gap: 10px;">
                             <div style="flex: 1;">
-                                <img src="gradient2D-viz.gif" alt="Animated GIF" class="expandable-img" style="max-width: 100%; height: auto; cursor: pointer;" onclick="expandImage(this);">
+                                <img src="gradient2D-viz.gif" alt="Animated GIF" class="expandable-img" style="width: 100%; height: auto; cursor: pointer;" onclick="expandImage(this);">
                             </div>
                             <div style="flex: 1;">
-                                <img src="dl-gradient.png" alt="Description of image 2" class="expandable-img" style="max-width: 100%; height: auto; cursor: pointer;" onclick="expandImage(this);">
+                                <img src="dl-gradient.png" alt="Description of image 2" class="expandable-img" style="width: 100%; height: auto; cursor: pointer;" onclick="expandImage(this);">
                             </div>
                             <div style="flex: 1;">
-                                <blockquote class="twitter-tweet"><a href="https://x.com/pablocpz_ai/status/1699460898228781384"></a></blockquote> 
+                                <blockquote class="twitter-tweet"><a href="https://x.com/pablocpz_ai/status/1699460898228781384?ref_src=twsrc%5Etfw"></a></blockquote>
                                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                             </div>
                         </div>
+                        
                         <script>
-                            function expandImage(img) {{
+                            function expandImage(img) {
                                 var modal = document.createElement("div");
                                 modal.style.position = "fixed";
                                 modal.style.top = 0;
@@ -161,9 +162,19 @@
                                 modal.style.alignItems = "center";
                                 modal.style.justifyContent = "center";
                                 modal.style.zIndex = 1000;
-                                modal.onclick = function() {{
+                        
+                                var closeBtn = document.createElement("span");
+                                closeBtn.innerHTML = "&times;";
+                                closeBtn.style.position = "absolute";
+                                closeBtn.style.top = "20px";
+                                closeBtn.style.right = "30px";
+                                closeBtn.style.color = "white";
+                                closeBtn.style.fontSize = "40px";
+                                closeBtn.style.fontWeight = "bold";
+                                closeBtn.style.cursor = "pointer";
+                                closeBtn.onclick = function() {
                                     document.body.removeChild(modal);
-                                }};
+                                };
                         
                                 var expandedImg = document.createElement("img");
                                 expandedImg.src = img.src;
@@ -171,12 +182,11 @@
                                 expandedImg.style.maxHeight = "90%";
                         
                                 modal.appendChild(expandedImg);
+                                modal.appendChild(closeBtn);
                                 document.body.appendChild(modal);
-                            }}
+                            }
                         </script>
                         
-                
-                </div>
                 <p>The following months after then, I also grasped the main concepts of Probability, and some statistics in python</p>
                 <div style="display: flex; flex-direction: column; align-items: center;">
                     <img src="prob.png" alt="Description of image 1" class="expandable-img" style="max-width: 100%; height: auto; margin-bottom: 10px;">
