@@ -10,18 +10,16 @@
         /* Style for photo grid */
 
         .twitter-posts {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
         }
-        .twitter-posts blockquote {
-            flex: 1 1 calc(33.33% - 10px); /* Three columns layout with space between */
-            max-width: 33.33%; /* Ensure each tweet doesn't exceed one-third of the container's width */
-            box-sizing: border-box;
+        .twitter-tweet {
+            margin: auto;
         }
         .text-center {
             text-align: center;
-            margin-top: 10px;
         }
 
         .photo-grid {
@@ -273,7 +271,7 @@
                 
                 <p>I also learnt some Manim, a <b>mathematical 3D animation framework made by the YouTube creator, 3Blue1Brown</b></p>
                 <p>By using Manim, I also explained some concepts I learnt along the way to build a project:</p>
-
+                
                 <h2>Second row of tweets</h2>
                 <div class="twitter-posts">
                     <blockquote class="twitter-tweet">
@@ -289,7 +287,7 @@
                 <div class="text-center">
                     <p>Second row of tweets</p>
                 </div>
-
+                
                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
               
                 
