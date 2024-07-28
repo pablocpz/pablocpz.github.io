@@ -110,10 +110,80 @@
     <title>Pablo Cobo</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+    <style>
+        /* Style for photo grid */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .grid-photo {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .grid-photo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Style for modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+
 </head>
+
+
+
+
+
+
 <body>
     <div class="container">
         <aside class="sidebar">
+
+
             <h2>Featured Tweets</h2>
             <div class="twitter-posts">
                 <blockquote class="twitter-tweet"><a href="https://twitter.com/pablocpz_ai/status/1808256804561822043"></a></blockquote>
@@ -124,6 +194,43 @@
                 <blockquote class="twitter-tweet"><a href="https://twitter.com/pablocpz_ai/status/1689171781263781888"></a></blockquote>
                 <blockquote class="twitter-tweet"><a href="https://twitter.com/pablocpz_ai/status/1764365057163436173"></a></blockquote>
             </div>
+
+            <h2>Photo Grid</h2>
+            <div class="photo-grid">
+                <img src="/photos/1.jpg" alt="Photo 1" class="grid-photo" onclick="openModal(this)">
+                <img src="/photos/2.jpg" alt="Photo 2" class="grid-photo" onclick="openModal(this)">
+                <img src="/photos/3.jpg" alt="Photo 3" class="grid-photo" onclick="openModal(this)">
+                <img src="/photos/4.jpg" alt="Photo 4" class="grid-photo" onclick="openModal(this)">
+                <img src="/photos/5.jpg" alt="Photo 5" class="grid-photo" onclick="openModal(this)">
+                <img src="/photos/6.jpg" alt="Photo 6" class="grid-photo" onclick="openModal(this)">
+
+            </div>
+
+
+             <!-- Modal for full-size images -->
+             <div id="modal" class="modal">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img class="modal-content" id="modal-img">
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        // JavaScript for modal functionality
+        function openModal(img) {
+            var modal = document.getElementById("modal");
+            var modalImg = document.getElementById("modal-img");
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("modal");
+            modal.style.display = "none";
+        }
+    </script>
+
+
         </aside>
         <main class="content">
             <h1>Pablo Cobo Pérez</h1>
