@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pablo Cobo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <style>
-        /* Style for tweets in columns */
+        /* Style for photo grid */
+
         .twitter-posts {
             display: flex;
             flex-wrap: wrap;
@@ -20,22 +23,25 @@
             text-align: center;
             margin-top: 10px;
         }
-        /* Style for photo grid */
+
         .photo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
             gap: 10px;
             margin-top: 20px;
         }
+
         .grid-photo {
             width: 100%;
             height: auto;
             cursor: pointer;
             transition: transform 0.2s;
         }
+
         .grid-photo:hover {
             transform: scale(1.05);
         }
+
         /* Style for modal */
         .modal {
             display: none;
@@ -50,12 +56,14 @@
             background-color: rgb(0, 0, 0);
             background-color: rgba(0, 0, 0, 0.9);
         }
+
         .modal-content {
             margin: auto;
             display: block;
             width: 80%;
             max-width: 700px;
         }
+
         .close {
             position: absolute;
             top: 15px;
@@ -65,6 +73,7 @@
             font-weight: bold;
             transition: 0.3s;
         }
+
         .close:hover,
         .close:focus {
             color: #bbb;
@@ -78,27 +87,13 @@
         <aside class="sidebar">
             <h2>Featured Tweets</h2>
             <div class="twitter-posts">
-                <blockquote class="twitter-tweet">
-                    <a href="https://twitter.com/pablocpz_ai/status/1808256804561822043"></a>
-                </blockquote>
-                <blockquote class="twitter-tweet">
-                    <a href="https://twitter.com/pablocpz_ai/status/1757887396115353672"></a>
-                </blockquote>
-                <blockquote class="twitter-tweet">
-                    <a href="https://twitter.com/pablocpz_ai/status/1744410297404661968"></a>
-                </blockquote>
-                <blockquote class="twitter-tweet">
-                    <a href="https://twitter.com/pablocpz_ai/status/1741598018451775596"></a>
-                </blockquote>
-                <blockquote class="twitter-tweet">
-                    <a href="https://twitter.com/pablocpz_ai/status/1689663545984602114"></a>
-                </blockquote>
-                <blockquote class="twitter-tweet">
-                    <a href="https://twitter.com/pablocpz_ai/status/1689171781263781888"></a>
-                </blockquote>
-                <blockquote class="twitter-tweet">
-                    <a href="https://twitter.com/pablocpz_ai/status/1764365057163436173"></a>
-                </blockquote>
+                <blockquote class="twitter-tweet"><a href="https://twitter.com/pablocpz_ai/status/1808256804561822043"></a></blockquote>
+                <blockquote class="twitter-tweet"><a href="https://twitter.com/pablocpz_ai/status/1757887396115353672"></a></blockquote>
+                <blockquote class="twitter-tweet"><a href="https://twitter.com/pablocpz_ai/status/1744410297404661968"></a></blockquote>
+                <blockquote class="twitter-tweet"><a href="https://twitter.com/pablocpz_ai/status/1741598018451775596"></a></blockquote>
+                <blockquote class="twitter-tweet"><a href="https://twitter.com/pablocpz_ai/status/1689663545984602114"></a></blockquote>
+                <blockquote class="twitter-tweet"><a href="https://twitter.com/pablocpz_ai/status/1689171781263781888"></a></blockquote>
+                <blockquote class="twitter-tweet"><a href="https://twitter.com/pablocpz_ai/status/1764365057163436173"></a></blockquote>
             </div>
             <h2>Some photos</h2>
             <div class="photo-grid">
@@ -110,6 +105,8 @@
                 <img src="/photos/6.jpg" alt="Photo 6" class="grid-photo" onclick="openModal(this)">
                 <img src="/photos/7.png" alt="Photo 7" class="grid-photo" onclick="openModal(this)">
                 <img src="/photos/8.png" alt="Photo 8" class="grid-photo" onclick="openModal(this)">
+
+
             </div>
             <!-- Modal for full-size images -->
             <div id="modal" class="modal">
@@ -129,10 +126,16 @@
                     <li>Sometimes I overthink too much. That's why I try to do meditation.</li>
                     <li>Never think that sucess is a luckly attribute, it's often attached to pain, that's why one of the biggest skills is <b>resilence</b>,
                         by being solid and having time to disconnect even when you couldn't archieve what you wanted to get done that day.
+
                     </li>
+                    
                     <li><b>Never think that you're behind people</b>.Comparing yourself to others is the worst thing to do, unless you learn from them instead.
                         Social media, if abussed, can produce dopamine, making you consume more videos. If those videos show just the "perfect" aspect of people, you'll get caught in a cortisol (stress hormone) generation chain.
                         Check my twitter <a href="https://x.com/pablocpz_ai/status/1741598018451775596">thread</a>.
+                    </li>
+                    
+
+                    </ul>
                     </li>
                     <li>I'm flying this 1 August to San Francisco, CA for a month. I think that it is a growth opportunity in the social, technological and personal facets</li>
                 </ul>
@@ -149,48 +152,187 @@
                             <li><b>Linear Algebra</b> (arithmetic operations between matrices, vectors, scalars) and basic concepts like determinants</li>
                             <li>Furthemore, <b>solved some school concepts</b> I used to confuse (like trigonometrics), by applying intuitive and interactive visualizations in python notebooks</li>
                         </ul>
-                </div>
-                <div style="display: flex; justify-content: space-between; gap: 10px;">
-                    <div style="flex: 1;">
-                        <img src="gradient2D-viz.gif" alt="Animated GIF" class="expandable-img" style="width: 100%; height: auto; cursor: pointer;" onclick="expandImage(this);">
+                
+                
+                        <div style="display: flex; justify-content: space-between; gap: 10px;">
+                            <div style="flex: 1;">
+                                <img src="gradient2D-viz.gif" alt="Animated GIF" class="expandable-img" style="width: 100%; height: auto; cursor: pointer;" onclick="expandImage(this);">
+                            </div>
+                            <div style="flex: 1;">
+                                <img src="dl-gradient.png" alt="Description of image 2" class="expandable-img" style="width: 100%; height: auto; cursor: pointer;" onclick="expandImage(this);">
+                            </div>
+                            <div style="flex: 1;">
+                                <img src="viz.jpg" alt="Description of image 3" class="expandable-img" style="width: 100%; height: auto; cursor: pointer;" onclick="expandImage(this);">
+                            </div>
+                        </div>
+                        
+                        <script>
+                            function expandImage(img) {
+                                var modal = document.createElement("div");
+                                modal.style.position = "fixed";
+                                modal.style.top = 0;
+                                modal.style.left = 0;
+                                modal.style.width = "100%";
+                                modal.style.height = "100%";
+                                modal.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+                                modal.style.display = "flex";
+                                modal.style.alignItems = "center";
+                                modal.style.justifyContent = "center";
+                                modal.style.zIndex = 1000;
+                        
+                                var closeBtn = document.createElement("span");
+                                closeBtn.innerHTML = "&times;";
+                                closeBtn.style.position = "absolute";
+                                closeBtn.style.top = "20px";
+                                closeBtn.style.right = "30px";
+                                closeBtn.style.color = "white";
+                                closeBtn.style.fontSize = "40px";
+                                closeBtn.style.fontWeight = "bold";
+                                closeBtn.style.cursor = "pointer";
+                                closeBtn.onclick = function() {
+                                    document.body.removeChild(modal);
+                                };
+                        
+                                var expandedImg = document.createElement("img");
+                                expandedImg.src = img.src;
+                                expandedImg.style.maxWidth = "90%";
+                                expandedImg.style.maxHeight = "90%";
+                        
+                                modal.appendChild(expandedImg);
+                                modal.appendChild(closeBtn);
+                                document.body.appendChild(modal);
+                            }
+                        </script>
+                        
+                        
+                <p>The following months after then, I also grasped the main concepts of Probability, and some statistics in python</p>
+                <div style="display: flex; flex-direction: row; justify-content: center;">
+                    <div style="margin-right: 10px;">
+                        <img src="prob.png" alt="Description of image 1" class="expandable-img" style="max-width: 100%; height: auto;">
                     </div>
-                    <div style="flex: 1;">
-                        <img src="dl-gradient.png" alt="Description of image 2" class="expandable-img" style="width: 100%; height: auto; cursor: pointer;" onclick="expandImage(this);">
-                    </div>
-                    <div style="flex: 1;">
-                        <img src="viz.jpg" alt="Description of image 3" class="expandable-img" style="width: 100%; height: auto; cursor: pointer;" onclick="expandImage(this);">
+                    <div>
+                        <img src="stats-thinkstats-book.png" alt="Description of image 2" class="expandable-img" style="max-width: 100%; height: auto;">
                     </div>
                 </div>
-                <script>
-                    function expandImage(img) {
-                        var src = img.src;
-                        var modal = document.getElementById('image-modal');
-                        var modalImg = document.getElementById('modal-image');
-                        modal.style.display = "block";
-                        modalImg.src = src;
-                    }
-                    function closeModal() {
-                        var modal = document.getElementById('image-modal');
-                        modal.style.display = "none";
-                    }
-                </script>
-                <div id="image-modal" style="display: none;">
-                    <span style="position: absolute; top: 20px; right: 45px; color: white; font-size: 30px; font-weight: bold; cursor: pointer;" onclick="closeModal()">&times;</span>
-                    <img id="modal-image" style="display: block; margin: auto; max-width: 100%;">
+                
+                <p>It helped me to really understand the art of neural networks, which I think it was the main block of abstraction in order to later understand new deep learning concepts (e.g convolutional nets or transformers)</p>
+
+                <div class="work-item">
+                    <img src="project_photos/2.png" alt="Description of image 2" class="expandable-img">
+                    <p><a href="https://live-electricity-dashboard.streamlit.app/">Real-Time Spanish Electricity Market Dashboard</a>: Real-Time Spanish Electricity Market Dashboard</p>
                 </div>
+                <div class="work-item">
+                    <img src="project_photos/3.png" alt="Description of image 3" class="expandable-img">
+                    <p><a href="https://deployed-criminal-detection-v5.vercel.app/">(Toy Beta) AI-Powered Criminal Detection in crowds</a>: 
+                        I made a toy version of a project whose aim was to help the police easily identify criminals
+                        in video footage without the tedious task of analyzing each second
+                        and comparing faces with their extensive database. It could be applied to security in homes & private companies.
+                        Started making a toy version, which combines an easy pipeline:
+                        <ul>
+                            <li>Face Detector: crops the faces in the image/frame</li>
+                            <li>Face Recognition: extracts the intrinsic info of the face (embeddings) and compares them with the stored criminal faces</li>
+                        </ul>
+                        <a href="https://x.com/pablocpz_ai/status/1808256804561822043">More details</a>
+                    </p>    
+                </div>
+                <div class="work-item">
+                    <img src="project_photos/4.jpg" alt="Description of image 4" class="expandable-img">
+                    <p><a href="https://live-electricity-dashboard.streamlit.app/">Historical Electricity Market Forecasting</a>
+                    
+                    With the help of my mentor Jesus Lopez, I built a dashboard capable of giving accurate predictions of the electric data generation, as well as displaying it using shap to interpret its predictions. We trained the model on historical data of ESIOS Spanish Market API of 3 years (2017-2022)
+                    </p>
+                </div>
+
+                <div class="work-item">
+                    <img src="medium.jpg" alt="Description of image 5" class="expandable-img">
+                    <p><a href="https://medium.com/@pablocpzz.ai/deep-learning-explained-a385edfb42b1">AI Explicative posts</a>
+                    
+                        Few months after meeting my mentor, I started to implement an effective way to ensure I was correctly assembling the concepts I learnt along the way.
+                        It was about <b>easily explaining them for others</b> -- just like as Kaparthy said once: "You really know something, if you can explain it to a 7 years old"
+                    </p>
+
+                </div>
+
+
+                
+                <h2>First row of tweets</h2>
+                <div class="twitter-posts">
+                    <blockquote class="twitter-tweet">
+                        <a href="https://twitter.com/pablocpz_ai/status/1704943871602393393"></a>
+                    </blockquote>
+                    <blockquote class="twitter-tweet">
+                        <a href="https://twitter.com/pablocpz_ai/status/1708445332252635550"></a>
+                    </blockquote>
+                    <blockquote class="twitter-tweet">
+                        <a href="https://twitter.com/pablocpz_ai/status/1716485323348181403"></a>
+                    </blockquote>
+                </div>
+                <div class="text-center">
+                    <p>First row of tweets</p>
+                </div>
+                
+                <p>I also learnt some Manim, a <b>mathematical 3D animation framework made by the YouTube creator, 3Blue1Brown</b></p>
+                <p>By using Manim, I also explained some concepts I learnt along the way to build a project:</p>
+
+                <h2>Second row of tweets</h2>
+                <div class="twitter-posts">
+                    <blockquote class="twitter-tweet">
+                        <a href="https://twitter.com/pablocpz_ai/status/1740483267902816499"></a>
+                    </blockquote>
+                    <blockquote class="twitter-tweet">
+                        <a href="https://twitter.com/pablocpz_ai/status/1748462278079299742"></a>
+                    </blockquote>
+                    <blockquote class="twitter-tweet">
+                        <a href="https://twitter.com/pablocpz_ai/status/1789761789694996748"></a>
+                    </blockquote>
+                </div>
+                <div class="text-center">
+                    <p>Second row of tweets</p>
+                </div>
+
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              
+                
+                <!-- eg. https://x.com/pablocpz_ai/status/1773784599157514338 -->
+                
             </section>
+            <style>
+                .expandable-img {
+                    width: 300px;
+                    height: auto;
+                    cursor: pointer;
+                    transition: transform 0.3s;
+                }
+                .expandable-img:active {
+                    transform: scale(1.1);
+                }
+            </style>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const images = document.querySelectorAll('.expandable-img');
+                    images.forEach(image => {
+                        image.addEventListener('click', function() {
+                            if (this.requestFullscreen) {
+                                this.requestFullscreen();
+                            } else if (this.mozRequestFullScreen) {
+                                this.mozRequestFullScreen();
+                            } else if (this.webkitRequestFullscreen) {
+                                this.webkitRequestFullscreen();
+                            } else if (this.msRequestFullscreen) {
+                                this.msRequestFullscreen();
+                            }
+                        });
+                    });
+                });
+            </script>
+            <footer>
+                <p>If you wanna talk, send me an email to <a href="mailto:pablocoboperez07@gmail.com">pablocoboperez07@gmail.com</a>.</p>
+                <p>You can find me on <a href="https://x.com/pablocpz_ai">Twitter</a>.</p>
+            </footer>
         </main>
     </div>
-
-    <div class="text-center">
-        <p>Pablo Cobo Pérez</p>
-        <p>Designed with ❤️ by Pablo</p>
-    </div>
-
-    <!-- Load Twitter Widgets JavaScript -->
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <!-- Load custom JavaScript for modal functionality -->
     <script>
+        // JavaScript for modal functionality
         function openModal(img) {
             var modal = document.getElementById("modal");
             var modalImg = document.getElementById("modal-img");
