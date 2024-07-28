@@ -16,13 +16,14 @@
         }
         .twitter-posts blockquote {
             flex: 1 1 calc(33.33% - 10px); /* Three columns layout with space between */
+            max-width: 33.33%; /* Ensure each tweet doesn't exceed one-third of the container's width */
             box-sizing: border-box;
         }
         .text-center {
             text-align: center;
             margin-top: 10px;
         }
-        
+
         .photo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -254,6 +255,7 @@
 
 
                 
+                <h2>First row of tweets</h2>
                 <div class="twitter-posts">
                     <blockquote class="twitter-tweet">
                         <a href="https://twitter.com/pablocpz_ai/status/1704943871602393393"></a>
@@ -269,6 +271,9 @@
                     <p>First row of tweets</p>
                 </div>
                 
+                <p>I also learnt some Manim, a <b>mathematical 3D animation framework made by the YouTube creator, 3Blue1Brown</b></p>
+                <p>By using Manim, I also explained some concepts I learnt along the way to build a project:</p>
+
                 <h2>Second row of tweets</h2>
                 <div class="twitter-posts">
                     <blockquote class="twitter-tweet">
@@ -284,33 +289,9 @@
                 <div class="text-center">
                     <p>Second row of tweets</p>
                 </div>
-            
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-                <p>I also learnt some Manim, a <b>mathematical 3D animation framework made by the YouTube creator, 3Blue1Brown</b></p>
-                <p>By using Manim, I also explained some concepts I learnt along the way to build a project:</p>
-                <div style="display: flex; justify-content: space-between; gap: 10px;">
-                    <div style="flex: 1;">
-                        <blockquote class="twitter-tweet">
-                            <a href="https://x.com/pablocpz_ai/status/1726996172014026894?ref_src=twsrc%5Etfw"></a>
-                        </blockquote>
-                    </div>
-                    <div style="flex: 1;">
-                        <blockquote class="twitter-tweet">
-                            <a href="https://x.com/pablocpz_ai/status/1733238204419993608?ref_src=twsrc%5Etfw"></a>
-                        </blockquote>
-                    </div>
-                    <div style="flex: 1;">
-                        <blockquote class="twitter-tweet">
-                            <a href="https://x.com/pablocpz_ai/status/1773784599157514338?ref_src=twsrc%5Etfw"></a>
-                        </blockquote>
-                    </div>
-                </div>
-                <div style="text-align: center; margin-top: 10px;">
-                    <p>Third row of tweets</p>
-                </div>
-                
                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              
                 
                 <!-- eg. https://x.com/pablocpz_ai/status/1773784599157514338 -->
                 
