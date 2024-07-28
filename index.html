@@ -126,8 +126,64 @@
                 <h2>Featured Work</h2>
                 <div class="work-item">
                     <img src="project_photos/1.png" alt="Description of image 1" class="expandable-img">
-                    <p><a href="https://medium.com/@pablocpzz.ai/an-ilustrated-guide-with-code-of-a-neural-network-regression-made-from-scratch-352b01059042">Neural Network ilustrated & coded from scratch</a>: Here I made a handwritten + code guide of making a neural network from scratch.</p>
+                    <p><a href="https://medium.com/@pablocpzz.ai/an-ilustrated-guide-with-code-of-a-neural-network-regression-made-from-scratch-352b01059042">Neural Network ilustrated & coded from scratch</a>: Here I made a handwritten + code guide of making a neural network from scratch.
+                         It was a result of an intense & funny summer I spent in 2023, learning all the <b>core math of deep learning</b>, helping me to solve high school errors and take a step further.
+                        I learnt:</p>
+                        <ul>
+                            <li>- Calculus (derivatives, geometric interpretation, integrals and limits)</li>
+                            <li>- Linear Algebra (arithmetic operations between matrices, vectors, scalars) and basic concepts like determinants</li>
+                            <li>Furthemore, solved some school concepts I used to confuse (like trigonometrics), by applying intuitive and interactive visualizations in python notebooks</li>
+                        </ul>
+                
+                
+                        <div style="display: flex; justify-content: space-between; gap: 10px;">
+                            <div style="flex: 1;">
+                                <img src="gradient2D-viz.gif" alt="Animated GIF" class="expandable-img" style="max-width: 100%; height: auto; cursor: pointer;" onclick="expandImage(this);">
+                            </div>
+                            <div style="flex: 1;">
+                                <img src="dl-gradient.png" alt="Description of image 2" class="expandable-img" style="max-width: 100%; height: auto; cursor: pointer;" onclick="expandImage(this);">
+                            </div>
+                            <div style="flex: 1;">
+                                <blockquote class="twitter-tweet"><a href="https://x.com/pablocpz_ai/status/1699460898228781384"></a></blockquote> 
+                                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            </div>
+                        </div>
+                        <script>
+                            function expandImage(img) {{
+                                var modal = document.createElement("div");
+                                modal.style.position = "fixed";
+                                modal.style.top = 0;
+                                modal.style.left = 0;
+                                modal.style.width = "100%";
+                                modal.style.height = "100%";
+                                modal.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+                                modal.style.display = "flex";
+                                modal.style.alignItems = "center";
+                                modal.style.justifyContent = "center";
+                                modal.style.zIndex = 1000;
+                                modal.onclick = function() {{
+                                    document.body.removeChild(modal);
+                                }};
+                        
+                                var expandedImg = document.createElement("img");
+                                expandedImg.src = img.src;
+                                expandedImg.style.maxWidth = "90%";
+                                expandedImg.style.maxHeight = "90%";
+                        
+                                modal.appendChild(expandedImg);
+                                document.body.appendChild(modal);
+                            }}
+                        </script>
+                        
+                
                 </div>
+                <p>The following months after then, I also grasped the main concepts of Probability, and some statistics in python</p>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="prob.png" alt="Description of image 1" class="expandable-img" style="max-width: 100%; height: auto; margin-bottom: 10px;">
+                    <img src="stats-thinkstats-book.png" alt="Description of image 2" class="expandable-img" style="max-width: 100%; height: auto;">
+                </div>
+                                
+                
                 <div class="work-item">
                     <img src="project_photos/2.png" alt="Description of image 2" class="expandable-img">
                     <p><a href="https://live-electricity-dashboard.streamlit.app/">Real-Time Spanish Electricity Market Dashboard</a>: Real-Time Spanish Electricity Market Dashboard</p>
