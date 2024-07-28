@@ -1,107 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</head>
-<body>
-    <div class="container">
-        <aside class="sidebar">
-            <h2>Featured Tweets</h2>
-            <div class="twitter-posts">
-                <blockquote class="twitter-tweet"><a href="https://twitter.com/pablocpz_ai/status/1808256804561822043"></a></blockquote>
-                <blockquote class="twitter-tweet"><a href="https://twitter.com/pablocpz_ai/status/1757887396115353672"></a></blockquote>
-                <blockquote class="twitter-tweet"><a href="https://twitter.com/pablocpz_ai/status/1744410297404661968"></a></blockquote>
-                <blockquote class="twitter-tweet"><a href="https://twitter.com/pablocpz_ai/status/1741598018451775596"></a></blockquote>
-                <blockquote class="twitter-tweet"><a href="https://twitter.com/pablocpz_ai/status/1689663545984602114"></a></blockquote>
-                <blockquote class="twitter-tweet"><a href="https://twitter.com/pablocpz_ai/status/1689171781263781888"></a></blockquote>
-                <blockquote class="twitter-tweet"><a href="https://twitter.com/pablocpz_ai/status/1764365057163436173"></a></blockquote>
-            </div>
-        </aside>
-        <main class="content">
-            <h1>Pablo Cobo Pérez</h1>
-            <section class="about">
-                <h2>About me:</h2>
-                <ul>
-                    <li>I live in Córdoba, Spain</li>
-                    <li>I enjoy...
-                        <ul>
-                            <li>[City 1];</li>
-                            <li>[City 2];</li>
-                            <li>[City 3];</li>
-                            <li>and [City 4].</li>
-                        </ul>
-                    </li>
-                    <li>I'm currently looking for...</li>
-                    <li>I work at [Company Name]. [Brief description of your job].</li>
-                    <li>I wonder about [something you're curious about].</li>
-                </ul>
-            </section>
-            <hr>
-            <section class="additional-info">
-                <p>[Add a paragraph about your passion or interests]</p>
-                <p>[Add another paragraph expanding on your thoughts]</p>
-            </section>
-            <hr>
-            <section class="photo-gallery">
-                <h2>Photo Gallery</h2>
-                <div id="photoGrid" class="photo-grid"></div>
-            </section>
-            <footer>
-                <p>If you also enjoy [your interest], send me an email to <a href="mailto:pablocoboperez07@gmail.com">pablocoboperez07@gmail.com</a>.</p>
-                <p>You can find me on <a href="https://x.com/pablocpz_ai">Twitter</a>.</p>
-            </footer>
-        </main>
-    </div>
-    <script>
-        const photoGrid = document.getElementById('photoGrid');
-        const photoFolder = 'photos/';
-        const photoExtensions = ['jpg', 'jpeg', 'png', 'gif'];
-
-        function loadPhotos() {
-            fetch(photoFolder)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Failed to load photos directory');
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    const parser = new DOMParser();
-                    const htmlDoc = parser.parseFromString(data, 'text/html');
-                    const links = htmlDoc.getElementsByTagName('a');
-
-                    if (links.length === 0) {
-                        throw new Error('No photos found');
-                    }
-
-                    for (let link of links) {
-                        const fileName = link.href.split('/').pop();
-                        const fileExtension = fileName.split('.').pop().toLowerCase();
-                        
-                        if (photoExtensions.includes(fileExtension)) {
-                            const img = document.createElement('img');
-                            img.src = photoFolder + fileName;
-                            img.alt = fileName;
-                            photoGrid.appendChild(img);
-                        }
-                    }
-                })
-                .catch(error => {
-                    console.error('Error loading photos:', error);
-                    photoGrid.innerHTML = '<p>Unable to load photos. Please make sure the photos directory exists and is accessible.</p>';
-                });
-        }
-
-        loadPhotos();
-    </script>
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -110,8 +6,6 @@
     <title>Pablo Cobo</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
     <style>
         /* Style for photo grid */
         .photo-grid {
@@ -171,19 +65,10 @@
             cursor: pointer;
         }
     </style>
-
 </head>
-
-
-
-
-
-
 <body>
     <div class="container">
         <aside class="sidebar">
-
-
             <h2>Featured Tweets</h2>
             <div class="twitter-posts">
                 <blockquote class="twitter-tweet"><a href="https://twitter.com/pablocpz_ai/status/1808256804561822043"></a></blockquote>
@@ -194,7 +79,6 @@
                 <blockquote class="twitter-tweet"><a href="https://twitter.com/pablocpz_ai/status/1689171781263781888"></a></blockquote>
                 <blockquote class="twitter-tweet"><a href="https://twitter.com/pablocpz_ai/status/1764365057163436173"></a></blockquote>
             </div>
-
             <h2>Photo Grid</h2>
             <div class="photo-grid">
                 <img src="/photos/1.jpg" alt="Photo 1" class="grid-photo" onclick="openModal(this)">
@@ -203,18 +87,101 @@
                 <img src="/photos/4.jpg" alt="Photo 4" class="grid-photo" onclick="openModal(this)">
                 <img src="/photos/5.jpg" alt="Photo 5" class="grid-photo" onclick="openModal(this)">
                 <img src="/photos/6.jpg" alt="Photo 6" class="grid-photo" onclick="openModal(this)">
-
             </div>
-
-
-             <!-- Modal for full-size images -->
-             <div id="modal" class="modal">
+            <!-- Modal for full-size images -->
+            <div id="modal" class="modal">
                 <span class="close" onclick="closeModal()">&times;</span>
                 <img class="modal-content" id="modal-img">
             </div>
         </aside>
+        <main class="content">
+            <h1>Pablo Cobo Pérez</h1>
+            <section class="about">
+                <h2>About me:</h2>
+                <ul>
+                    <li>I live in Córdoba, Spain</li>
+                    <li>I enjoy...
+                        <ul>
+                            <li>Accomplishing things untill the end, breaking them into small pieces</li>
+                            <li>Maintaining a set of habits along with work, keeping a balance
+                                <ul>
+                                    <li>1. Following a healthy diet</li>
+                                    <li>2. Having fun with friends and people </li>
+                                    <li>3. Doing hypertrophy workout at the gym</li>
+                                    <li>4. Going out, taking the sun</li>
+                                    <li>5. Often doing meditation</li>
+                                </ul>
+                            </li>
+                            <li>I think that when we chase and work on something (e.g tech project), we have to be resilent, because the most important moment is the one when you don't see any result</li>
+                        </ul>
+                    </li>
+                    <li>I'm flying this 1 August to San Francisco, CA for a month</li>
+                </ul>
+            </section>
+            <section class="featured-work">
+                <h2>Featured Work</h2>
+                <div class="work-item">
+                    <img src="project_photos/1.png" alt="Description of image 1" class="expandable-img">
+                    <p><a href="https://medium.com/@pablocpzz.ai/an-ilustrated-guide-with-code-of-a-neural-network-regression-made-from-scratch-352b01059042">Neural Network ilustrated & coded from scratch</a>: Here I made a handwritten + code guide of making a neural network from scratch.</p>
+                </div>
+                <div class="work-item">
+                    <img src="project_photos/2.png" alt="Description of image 2" class="expandable-img">
+                    <p><a href="https://live-electricity-dashboard.streamlit.app/">Real-Time Spanish Electricity Market Dashboard</a>: Real-Time Spanish Electricity Market Dashboard</p>
+                </div>
+                <div class="work-item">
+                    <img src="project_photos/3.png" alt="Description of image 3" class="expandable-img">
+                    <p><a href="https://deployed-criminal-detection-v5.vercel.app/">(Toy Beta) AI-Powered Criminal Detection in crowds</a>: 
+                        I made a toy version of a project whose aim was to help the police easily identify criminals
+                        in video footage without the tedious task of analyzing each second
+                        and comparing faces with their extensive database. It could be applied to security in homes & private companies.
+                        Started making a toy version, which combines an easy pipeline:
+                        <ul>
+                            <li>Face Detector: crops the faces in the image/frame</li>
+                            <li>Face Recognition: extracts the intrinsic info of the face (embeddings) and compares them with the stored criminal faces</li>
+                        </ul>
+                        <a href="https://x.com/pablocpz_ai/status/1808256804561822043">More details</a>
+                    </p>    
+                </div>
+                <div class="work-item">
+                    <img src="project_photos/4.jpg" alt="Description of image 4" class="expandable-img">
+                    <p><a href="https://live-electricity-dashboard.streamlit.app/">Historical Electricity Market Forecasting</a></p>
+                </div>
+            </section>
+            <style>
+                .expandable-img {
+                    width: 300px;
+                    height: auto;
+                    cursor: pointer;
+                    transition: transform 0.3s;
+                }
+                .expandable-img:active {
+                    transform: scale(1.1);
+                }
+            </style>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const images = document.querySelectorAll('.expandable-img');
+                    images.forEach(image => {
+                        image.addEventListener('click', function() {
+                            if (this.requestFullscreen) {
+                                this.requestFullscreen();
+                            } else if (this.mozRequestFullScreen) {
+                                this.mozRequestFullScreen();
+                            } else if (this.webkitRequestFullscreen) {
+                                this.webkitRequestFullscreen();
+                            } else if (this.msRequestFullscreen) {
+                                this.msRequestFullscreen();
+                            }
+                        });
+                    });
+                });
+            </script>
+            <footer>
+                <p>If you also enjoy [your interest], send me an email to <a href="mailto:pablocoboperez07@gmail.com">pablocoboperez07@gmail.com</a>.</p>
+                <p>You can find me on <a href="https://x.com/pablocpz_ai">Twitter</a>.</p>
+            </footer>
+        </main>
     </div>
-
     <script>
         // JavaScript for modal functionality
         function openModal(img) {
@@ -229,124 +196,5 @@
             modal.style.display = "none";
         }
     </script>
-
-
-        </aside>
-        <main class="content">
-            <h1>Pablo Cobo Pérez</h1>
-            <section class="about">
-                <h2>About me:</h2>
-                <ul>
-                    <li>I live in Córdoba, Spain</li>
-                    <li>I enjoy...
-                        <ul>
-                            <li>Accomplishing things untill the end, breaking them into small pieces</li>
-                            <li>Maintaining a set of habits along with work, keeping a balance
-
-                                Some of them are:
-                                <ul>
-                                    <li>1. Following a healthy diet</li>
-                                    <li>2. Having fun with friends and people </li>
-                                    <li>3. Doing hypertrophy workout at the gym</li>
-                                    <li>4. Going out, taking the sun</li>
-                                    <li>5. Often doing meditation</li>
-
-                                </ul>
-
-                            </li>
-                            <li>I think that when we chase and work on something (e.g tech project), we have to be resilent, because the most important moment is the one when you don't see any result</li>
-                            <!-- <li>and [City 4].</li> -->
-                        </ul>
-                    </li>
-                    <li>I'm flying this 1 august to San Francisco, CA for a month</li>
-                    <!-- <li>I work at [Company Name]. [Brief description of your job].</li>
-                    <li>I wonder about [something you're curious about].</li> -->
-                </ul>
-            </section>
-            <!-- <hr>
-            <section class="additional-info">
-                <p>[Add a paragraph about your passion or interests]</p>
-                <p>[Add another paragraph expanding on your thoughts]</p>
-            </section>
-            <hr>
-             -->
-
-            <section class="featured-work">
-                <h2>Featured Work</h2>
-                <div class="work-item">
-                    <img src="project_photos/1.png" alt="Description of image 1" class="expandable-img">
-                    <p><a href="https://medium.com/@pablocpzz.ai/an-ilustrated-guide-with-code-of-a-neural-network-regression-made-from-scratch-352b01059042">Neural Network ilustrated & coded from scratch</a>: Here I made a handwritten + code guide of making a neural network from scratch.</p>
-                </div>
-                <div class="work-item">
-                    <img src="project_photos/2.png" alt="Description of image 2" class="expandable-img">
-                    <p><a href="https://live-electricity-dashboard.streamlit.app/">Real-Time Spanish Electricity Market Dashboard</a>: Real-Time Spanish Electricity Market Dashboard</p>
-                </div>
-                <div class="work-item">
-                    <img src="project_photos/3.png" alt="Description of image 2" class="expandable-img">
-                    <p>
-                        <a href="https://deployed-criminal-detection-v5.vercel.app/">(Toy Beta) AI-Powered Criminal Detection in crowds</a>: 
-                    
-                    
-                    </p>    
-                    <p>I made a toy version of a project whose aim was to help the police easily identify criminals
-                         in video footage without the tedious task of analyzing each second
-                          and comparing faces with their extensive database. It could be applied to security in homes & private companies.
-
-                          Started making a toy version, which combines an easy pipeline:
-                          - Face Detector --> crops the faces in the image/frame
-                          - Face Recognition --> extracts the intrinsecal info of the face (embeddings) and compares them with the stored criminal faces
-                    </p>
-                    <p>
-                        <a href="https://x.com/pablocpz_ai/status/1808256804561822043">More details</a>
-                    
-                    
-                    </p>    
-                </div>
-                <div class="work-item">
-                    <img src="project_photos/4.jpg" alt="Description of image 2" class="expandable-img">
-                    <p><a href="https://live-electricity-dashboard.streamlit.app/">Historical Electricity Market Forecasting</a>:</p>
-                </div>
-                <!-- citar jesus lopez en este -->
-            </section>
-            
-            <style>
-                .expandable-img {
-                    width: 300px; /* Tamaño inicial de la imagen */
-                    height: auto; /* Mantiene la proporción de la imagen */
-                    cursor: pointer; /* Cambia el cursor a una mano para indicar que se puede hacer clic */
-                    transition: transform 0.3s; /* Suaviza la transición cuando se hace clic */
-                }
-                .expandable-img:active {
-                    transform: scale(1.1); /* Aumenta ligeramente el tamaño de la imagen cuando se hace clic */
-                }
-            </style>
-            
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    const images = document.querySelectorAll('.expandable-img');
-            
-                    images.forEach(image => {
-                        image.addEventListener('click', function() {
-                            if (this.requestFullscreen) {
-                                this.requestFullscreen();
-                            } else if (this.mozRequestFullScreen) { /* Firefox */
-                                this.mozRequestFullScreen();
-                            } else if (this.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-                                this.webkitRequestFullscreen();
-                            } else if (this.msRequestFullscreen) { /* IE/Edge */
-                                this.msRequestFullscreen();
-                            }
-                        });
-                    });
-                });
-            </script>
-            
-
-            <footer>
-                <p>If you also enjoy [your interest], send me an email to <a href="mailto:pablocoboperez07@gmail.com">pablocoboperez07@gmail.com</a>.</p>
-                <p>You can find me on <a href="https://x.com/pablocpz_ai">Twitter</a>.</p>
-            </footer>
-        </main>
-    </div>
 </body>
 </html>
