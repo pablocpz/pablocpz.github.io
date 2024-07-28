@@ -8,6 +8,21 @@
     <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <style>
         /* Style for photo grid */
+
+        .twitter-posts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .twitter-posts blockquote {
+            flex: 1 1 calc(33.33% - 10px); /* Three columns layout with space between */
+            box-sizing: border-box;
+        }
+        .text-center {
+            text-align: center;
+            margin-top: 10px;
+        }
+        
         .photo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -227,25 +242,6 @@
                     </p>
                 </div>
 
-                <style>
-                    .tweet-container {
-                        display: flex;
-                        justify-content: space-between;
-                        gap: 10px;
-                        margin-top: 20px;
-                    }
-                    .tweet-container:first-of-type {
-                        margin-top: 0;
-                    }
-                    .tweet-container div {
-                        flex: 1;
-                    }
-                    .text-center {
-                        text-align: center;
-                        margin-top: 10px;
-                    }
-                </style>
-
                 <div class="work-item">
                     <img src="medium.jpg" alt="Description of image 5" class="expandable-img">
                     <p><a href="https://medium.com/@pablocpzz.ai/deep-learning-explained-a385edfb42b1">AI Explicative posts</a>
@@ -256,43 +252,34 @@
 
                 </div>
 
-                <div class="tweet-container">
-                    <div>
-                        <blockquote class="twitter-tweet">
-                            <a href="https://x.com/pablocpz_ai/status/1704943871602393393?ref_src=twsrc%5Etfw"></a>
-                        </blockquote>
-                    </div>
-                    <div>
-                        <blockquote class="twitter-tweet">
-                            <a href="https://x.com/pablocpz_ai/status/1708445332252635550?ref_src=twsrc%5Etfw"></a>
-                        </blockquote>
-                    </div>
-                    <div>
-                        <blockquote class="twitter-tweet">
-                            <a href="https://x.com/pablocpz_ai/status/1716485323348181403?ref_src=twsrc%5Etfw"></a>
-                        </blockquote>
-                    </div>
+
+                
+                <div class="twitter-posts">
+                    <blockquote class="twitter-tweet">
+                        <a href="https://twitter.com/pablocpz_ai/status/1704943871602393393"></a>
+                    </blockquote>
+                    <blockquote class="twitter-tweet">
+                        <a href="https://twitter.com/pablocpz_ai/status/1708445332252635550"></a>
+                    </blockquote>
+                    <blockquote class="twitter-tweet">
+                        <a href="https://twitter.com/pablocpz_ai/status/1716485323348181403"></a>
+                    </blockquote>
                 </div>
                 <div class="text-center">
                     <p>First row of tweets</p>
                 </div>
-            
-                <div class="tweet-container">
-                    <div>
-                        <blockquote class="twitter-tweet">
-                            <a href="https://x.com/pablocpz_ai/status/1740483267902816499?ref_src=twsrc%5Etfw"></a>
-                        </blockquote>
-                    </div>
-                    <div>
-                        <blockquote class="twitter-tweet">
-                            <a href="https://x.com/pablocpz_ai/status/1748462278079299742?ref_src=twsrc%5Etfw"></a>
-                        </blockquote>
-                    </div>
-                    <div>
-                        <blockquote class="twitter-tweet">
-                            <a href="https://x.com/pablocpz_ai/status/1789761789694996748?ref_src=twsrc%5Etfw"></a>
-                        </blockquote>
-                    </div>
+                
+                <h2>Second row of tweets</h2>
+                <div class="twitter-posts">
+                    <blockquote class="twitter-tweet">
+                        <a href="https://twitter.com/pablocpz_ai/status/1740483267902816499"></a>
+                    </blockquote>
+                    <blockquote class="twitter-tweet">
+                        <a href="https://twitter.com/pablocpz_ai/status/1748462278079299742"></a>
+                    </blockquote>
+                    <blockquote class="twitter-tweet">
+                        <a href="https://twitter.com/pablocpz_ai/status/1789761789694996748"></a>
+                    </blockquote>
                 </div>
                 <div class="text-center">
                     <p>Second row of tweets</p>
