@@ -29,6 +29,8 @@
             text-align: center;
         }
 
+        
+
         .photo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -294,6 +296,7 @@
                 
                 
 
+                <h2>First row of tweets</h2>
                 <div class="twitter-posts">
                     <blockquote class="twitter-tweet">
                         <a href="https://twitter.com/pablocpz_ai/status/1726996172014026894"></a>
@@ -304,12 +307,30 @@
                     <blockquote class="twitter-tweet">
                         <a href="https://twitter.com/pablocpz_ai/status/1773784599157514338"></a>
                     </blockquote>
-
                 </div>
                 <div class="text-center">
                     <p>First row of tweets</p>
                 </div>
 
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <script>
+                    // Intenta reproducir videos automáticamente si es posible
+                    document.addEventListener('DOMContentLoaded', function() {
+                        // Esto solo funcionará si el navegador permite la reproducción automática de videos
+                        const tweets = document.querySelectorAll('.twitter-tweet');
+                        tweets.forEach(tweet => {
+                            tweet.onload = () => {
+                                const videos = tweet.querySelectorAll('video');
+                                videos.forEach(video => {
+                                    video.muted = true; // Asegúrate de que el video esté en silencio
+                                    video.play().catch(error => {
+                                        console.log('No se pudo reproducir el video automáticamente:', error);
+                                    });
+                                });
+                            };
+                        });
+                    });
+                </script>
 
 
 
