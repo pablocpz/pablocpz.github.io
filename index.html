@@ -238,13 +238,30 @@
                     </div>
                 </div>
                 
-                <p>It helped me to really understand the art of neural networks, which I think it was the main block of abstraction in order to later understand new deep learning concepts (e.g convolutional nets or transformers)</p>
+                <p>It helped me to really <b> </b>understand the art of neural networks, which I think it was the main block of abstraction in order to later understand new deep learning concepts (e.g convolutional nets or transformers)</p>
+
+
+                <hr>
 
                 <br>
                 <div class="work-item">
                     <img src="project_photos/2.png" alt="Description of image 2" class="expandable-img">
-                    <p><a href="https://live-electricity-dashboard.streamlit.app/">Real-Time Spanish Electricity Market Dashboard</a>: Real-Time Spanish Electricity Market Dashboard</p>
+                    <p><a href="https://live-electricity-dashboard.streamlit.app/">Real-Time Spanish Electricity Market Dashboard</a>: 
+                    I built a visualization interface with the Python Framework called Streamlit.
+                    
+                    It can analyze historical data of both generation & price of energetic generators in the market
+                    <br>
+
+                    <ul>
+                        <li>The data is retrieved from the <a href="https://api.esios.ree.es/">ESIOS API</a></li>
+                        <li>Based on the user selection on the GUI, the app will display the data in different plot types</li>
+                        <li></li>
+                    </ul>
+                    
+                    </p>
+
                 </div>
+                <hr>
 
                 <br>
                 <div class="work-item">
@@ -261,6 +278,7 @@
                         <a href="https://x.com/pablocpz_ai/status/1808256804561822043">More details</a>
                     </p>    
                 </div>
+                <hr>
 
                 <br>
 
@@ -270,6 +288,29 @@
                     
                     With the help of my mentor Jesus Lopez, I built a dashboard capable of giving accurate predictions of the electric data generation, as well as displaying it using shap to interpret its predictions. We trained the model on historical data of ESIOS Spanish Market API of 3 years (2017-2022)
                     </p>
+
+                    <ul>
+                        <li>The data used for training was the daily generation of spanish energetic generators from 2017-2022 and it's value in the market.</li>
+                        <li>The model takes as input the generation for each generator in a day, and gives the value of the energetic market for that input day</li>
+
+                        <li>After some explanatory data analysis, we observed that <b>Solar PV </b>, had a high Pearson correlation
+                             with the daily market end value, which made sense given the
+                              long hours of sunshine there are throughout the months in Spain.</li>
+
+                        <li>Selected the best suitable machine learning model for this regression problem, by comparing the mean squared error metric</li>
+
+                        <li>The model was deployed into a Streamlit web application.</li>
+
+                        <li>We decided to make the user interpret and understand the model predictions,
+                             getting key insights of the influence of each input variable to the prediction,
+                              by using the <a href="https://shap.readthedocs.io/en/latest/">Shap framework</a></li>
+
+
+                        <li>We formatted the shapley values to let the user know how much did each input generator influenced to the market price of that day</li>
+                        <li>We combined this pure-english output with the rich visualizations that shapley offers.</li>
+                        
+                        <li>The <b>potential use cases</b> of this application includes the ability of giving the electric companies get accurate forecasting of which are the most strategic conditions in the energetic market with most return, giving them a easily interpretable insight of this kind of data, helping them to make the best data-driven decissions possible.</li>
+                            </ul>
                 </div>
                 
                 <br>
