@@ -21,7 +21,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-            width: 70%;
+            width: 80%;
             margin: auto;
         }
         .video-grid video {
@@ -30,13 +30,13 @@
 
         .twitter-posts {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Cambiado de 300px a 200px */
+            gap: 20px;
+            margin-bottom: 20px;
         }
+
         .twitter-tweet {
-            width: 100%;
-            height: 200px; /* Ajusta la altura según sea necesario */
+            margin: auto;
         }
         .text-center {
             text-align: center;
@@ -277,26 +277,27 @@
 
                 
                 <h4>Sample posts</h2>
-                    <div class="twitter-posts">
-                        <blockquote class="twitter-tweet">
-                            <a href="https://twitter.com/pablocpz_ai/status/1704943871602393393"></a>
-                        </blockquote>
-                        <blockquote class="twitter-tweet">
-                            <a href="https://twitter.com/pablocpz_ai/status/1708445332252635550"></a>
-                        </blockquote>
-                        <blockquote class="twitter-tweet">
-                            <a href="https://twitter.com/pablocpz_ai/status/1716485323348181403"></a>
-                        </blockquote>
-                        <blockquote class="twitter-tweet">
-                            <a href="https://twitter.com/pablocpz_ai/status/1740483267902816499"></a>
-                        </blockquote>
-                        <blockquote class="twitter-tweet">
-                            <a href="https://twitter.com/pablocpz_ai/status/1748462278079299742"></a>
-                        </blockquote>
-                        <blockquote class="twitter-tweet">
-                            <a href="https://twitter.com/pablocpz_ai/status/1789761789694996748"></a>
-                        </blockquote>
-                    </div>
+                <div class="twitter-posts">
+                    <blockquote class="twitter-tweet">
+                        <a href="https://twitter.com/pablocpz_ai/status/1704943871602393393"></a>
+                    </blockquote>
+                    <blockquote class="twitter-tweet">
+                        <a href="https://twitter.com/pablocpz_ai/status/1708445332252635550"></a>
+                    </blockquote>
+                    <blockquote class="twitter-tweet">
+                        <a href="https://twitter.com/pablocpz_ai/status/1716485323348181403"></a>
+                    </blockquote>
+
+                    <blockquote class="twitter-tweet">
+                        <a href="https://twitter.com/pablocpz_ai/status/1740483267902816499"></a>
+                    </blockquote>
+
+                    <blockquote class="twitter-tweet">
+                        <a href="https://twitter.com/pablocpz_ai/status/1748462278079299742"></a>
+                    </blockquote>
+                    <blockquote class="twitter-tweet">
+                        <a href="https://twitter.com/pablocpz_ai/status/1789761789694996748"></a>
+                    </blockquote>
                 </div>
                 <div class="text-center">
                     <p>First row of tweets</p>
