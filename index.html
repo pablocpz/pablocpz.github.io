@@ -87,6 +87,24 @@
             text-decoration: none;
             cursor: pointer;
         }
+
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .video-column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        video {
+            width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -295,42 +313,20 @@
                 <p>By using Manim, I also explained some concepts I learnt along the way to build a project:</p>
                 
                 
-
-                <h2>First row of tweets</h2>
-                <div class="twitter-posts">
-                    <blockquote class="twitter-tweet">
-                        <a href="https://twitter.com/pablocpz_ai/status/1726996172014026894"></a>
-                    </blockquote>
-                    <blockquote class="twitter-tweet">
-                        <a href="https://twitter.com/pablocpz_ai/status/1733238204419993608"></a>
-                    </blockquote>
-                    <blockquote class="twitter-tweet">
-                        <a href="https://twitter.com/pablocpz_ai/status/1773784599157514338"></a>
-                    </blockquote>
+                <div class="video-column">
+                    <video src="video1.mp4" autoplay muted loop></video>
+                    <video src="video2.mp4" autoplay muted loop></video>
+                    <video src="video3.mp4" autoplay muted loop></video>
+                    <video src="video4.mp4" autoplay muted loop></video>
                 </div>
-                <div class="text-center">
-                    <p>First row of tweets</p>
-                </div>
-
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            
                 <script>
-                    // Intenta reproducir videos automáticamente si es posible
-                    document.addEventListener('DOMContentLoaded', function() {
-                        // Esto solo funcionará si el navegador permite la reproducción automática de videos
-                        const tweets = document.querySelectorAll('.twitter-tweet');
-                        tweets.forEach(tweet => {
-                            tweet.onload = () => {
-                                const videos = tweet.querySelectorAll('video');
-                                videos.forEach(video => {
-                                    video.muted = true; // Asegúrate de que el video esté en silencio
-                                    video.play().catch(error => {
-                                        console.log('No se pudo reproducir el video automáticamente:', error);
-                                    });
-                                });
-                            };
-                        });
+                    document.querySelectorAll('video').forEach(video => {
+                        video.playbackRate = 1.5;
                     });
                 </script>
+
+        
 
 
 
