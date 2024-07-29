@@ -17,14 +17,14 @@
         } */
 
 
-        .video-column {
-            display: flex;
-            flex-direction: column;
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-            width: 25%;
+            width: 50%;
             margin: auto;
         }
-        .video-column video {
+        .video-grid video {
             width: 100%;
         }
 
@@ -308,7 +308,7 @@
                 <p>By using Manim, I also explained some concepts I learnt along the way to build a project:</p>
                 
                 
-                <div class="video-column">
+                <div class="video-grid">
                     <video controls autoplay muted>
                         <source src="video1.mp4" type="video/mp4">
                         Your browser does not support the video tag.
@@ -332,8 +332,6 @@
                         video.playbackRate = 1.5;
                     });
                 </script>
-            
-            
 
         
 
